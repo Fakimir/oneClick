@@ -1,0 +1,312 @@
+<html lang="en">
+    <head>
+        <title>AdFoc.us</title>
+        
+        		
+                
+        
+        <style>
+            #interstitial {position:absolute;width:100%;height:100%;top:0;left:0;background:#fff;display:none;}
+            #interstitial a img { border:0; }
+            #interstitial div.top {height:68px;text-align:right;font-size:22px;line-height:65px;color:#7d7d7d;font-family:Georgia, Arial;font-size:18px;}
+            #interstitial div.content {text-align:center;}
+            #interstitial div.top a.skip {float:right;margin:15px;}
+            #interstitial div.top img.interstitial-logo {float:left; width: 190px; padding-right: 10px; padding-left: 10px; padding-top: 5px;}
+            #interstitial div.topText {margin:0px 0px;padding-top:3px;float:left;font-size:15px;}
+            .topText a {color:#136ab9;}
+            .topText a:link {color:#136ab9;text-decoration:underline;}
+            .topText a:visited {color:#136ab9;text-decoration:underline;}
+            .topText a:active {color:#136ab9;text-decoration:underline;}
+            .topText a:hover {color:#136ab9;text-decoration:none;}.clickme{display:nones;}
+
+            .modal {
+              display: none;
+              width: 410px;
+              background: #fff;
+              padding: 15px 30px;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              -o-border-radius: 8px;
+              -ms-border-radius: 8px;
+              border-radius: 8px;
+              -webkit-box-shadow: 0 0 10px #000;
+              -moz-box-shadow: 0 0 10px #000;
+              -o-box-shadow: 0 0 10px #000;
+              -ms-box-shadow: 0 0 10px #000;
+              box-shadow: 0 0 10px #000;
+
+              position: absolute;
+              z-index: 10;
+              top: 100px;
+              left: 400px;
+            }
+
+            .modal a.close-modal {
+              position: absolute;
+              top: -12.5px;
+              right: -12.5px;
+              display: block;
+              width: 30px;
+              height: 30px;
+              text-indent: -9999px;
+              background: url(images/close.png) no-repeat 0 0;
+            }
+
+            .modal-spinner {
+              display: none;
+              width: 64px;
+              height: 64px;
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              margin-right: -32px;
+              margin-top: -32px;
+              background: url(spinner.gif) #111 no-repeat center center;
+              -webkit-border-radius: 8px;
+              -moz-border-radius: 8px;
+              -o-border-radius: 8px;
+              -ms-border-radius: 8px;
+              border-radius: 8px;
+            }
+            .modal-header h3 {
+              margin-top: 0px;
+              border-bottom: solid 2px;
+              padding-bottom: 4px;
+
+            }
+            #form-message {
+              display: none;
+              text-align: center;
+            }
+            #advline {
+              color: #136ab9; font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="/js/jquery.modal.min.js"></script>-->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8F7TKSJKP"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-J8F7TKSJKP');
+
+                    gtag('config', 'UA-31111098-4');
+          if (top != self) { top.location.replace(self.location.href); }
+      </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9854779124424507" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="modal" id="report-modal">
+          <div class="modal-header">
+            <h3>Report this Advertisement</h3>
+            <a href="#" class="close-modal"></a>
+          </div>
+          <form action="/ad-reports/create" method="POST" id="submit-report-ad">
+            <div id="form-inputs" class="modal-body">
+              If you would like to report the advertisement for a violation of our Advertiser TOS, please enter a message below and submit:
+
+                <textarea name="report[message]" cols="54" rows="3"></textarea>
+                <input name="report[id_campaign]" value="11380" type="hidden"/>
+                <input name="report[id_link]" value="97036257" type="hidden"/>
+                <input name="report[id_advertiser]" value="1" type="hidden"/>
+                <input name="report[id_publisher]" value="271228" type="hidden"/>
+                <input name="report[created_at]" value="2024-01-06 04:14:09" type="hidden"/>
+                <div>
+                  <input type="submit"/>
+                </div>
+            </div>
+            <div id="form-message" class="modal-body">
+              Your report was submitted successfully! Thank you!
+            </div>
+
+          </form>
+        </div>
+                <div id="interstitial" style="display: block;">
+          <style><!--
+.wrapper {
+  width: 100%;
+  height: 68px;
+  position:relative;
+  background: #212123;
+  }
+  
+  .headerContent {
+  width:95%;
+  margin-left: auto;
+  margin-right: auto;
+  color:#fff;	
+  position:relative;
+  }
+  
+  .logo {
+  float: left;
+  position:relative;
+  display: block;	
+  }
+  
+  .warningText {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight:200;
+  position:absolute;
+  left: 215px;
+  padding-top:5px;
+  float: left;
+  font-size:15px;
+  }
+  
+  .advLine{
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#c2c2c2;
+  position:absolute;
+  left: 315px;
+  top:35px;
+  font-size:12px;	
+  font-style:italic;
+  font-weight:normal;
+  }
+  
+  #advline{
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#c2c2c2;
+  font-size:12px;	
+  font-style:italic;
+  font-weight:normal;
+  }
+  
+  #topText{
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#c2c2c2;
+  font-size:12px;	
+  font-style:italic;
+  font-weight:normal;
+  }
+  
+  .topText{
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#c2c2c2;
+  font-size:12px;	
+  font-style:italic;
+  font-weight:normal;
+  }
+  
+  .advLine a{ 
+  color:#d29359;
+  }
+  
+  #advline a{ 
+  color:#d29359;
+  }
+  
+  #topText a{ 
+  color:#7bc5ff;
+  }
+  
+  .topText a{ 
+  color:#7bc5ff;
+  }
+  
+  .topText a:visited {color:#7bc5ff;}
+  
+  .reportLine{
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#c2c2c2;
+  position:absolute;
+  left: 740px;
+  z-index:500;
+  top:41px;
+  font-size:11px;	
+  font-style:italic;
+  font-weight:normal;
+  }
+  
+  .reportLine a{ 
+  color:#7bc5ff;
+  }
+  
+  .hostBtn {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:11px;
+  right:0;
+  top:17px;
+  right:150px;
+  position:absolute;
+  z-index:600;
+  }
+  .hostBtn:hover{
+  opacity: 0.9;
+  }
+  
+  .skipBtn {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size:11px;
+  right:0;
+  top:17px;
+  position:absolute;
+  z-index:600;	
+  }
+  .skipBtn:hover{
+  opacity: 0.9;
+  }
+--></style>
+<div class="wrapper">
+<div class="headerContent">
+<div class="logo"><a target="_blank"><img src="https://files.minecraftforge.net/static/images/logo.svg" alt="Forge Logo" width="190" height="70" /></a></div>
+<div class="warningText">
+<p>The content below is an advertisement. After the count-down, click Skip to begin your <strong>Forge download.</strong>.</p>
+</div>
+<div class="advLine"><div class="topText"><em>shorten URLs and earn up to <span id='advline'>$22.50 / 1000 visits</span></em> - <a href="http://adfoc.us/?refid=1" target="_blank">adfoc.us</a></div></div>
+<div class="reportLine">Feedback? <a href="https://adfoc.us/tickets/new" target="_blank">Report Ad</a></div>
+<div class="hostBtn"><a href="https://www.survivalservers.com/services/game_servers/minecraft/mods/forge/?coupon=FORGE&amp;trckaff=79148&amp;trckit=AFB271228" target="_blank"><img src="https://i.imgur.com/akCDAH0.png" alt="Rent a Forge Server" width="168" height="28" /></a></div>
+<div class="skipBtn"><span id="showTimer" ></span><span id="showSkip" style="display: none;"><a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20-46.0.14/forge-1.20-46.0.14-installer.jar" class="skip"><img src="//adfoc.us/uploads/users/c869a040_eaf6b9f4_skip.jpg" border="0" alt="Skip this Advertisement"/></a></div>
+</div>
+</div>
+          <div class="content">
+            <iframe src="https://www.survivalservers.com/services/game_servers/minecraft/mods/forge/?coupon=FORGE&amp;trckaff=79148&amp;trckit=AF271228" width="100%" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+            var ad_url = "https://www.survivalservers.com/services/game_servers/minecraft/mods/forge/?coupon=FORGE&amp;trckaff=79148&amp;trckit=AF271228";
+            var ref_url = "http://adfoc.us/?refid=1";
+            var payout_rate = "$22.50";
+
+            var click_url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20-46.0.14/forge-1.20-46.0.14-installer.jar";
+            var preview = false;
+
+            var count=6;
+            var counter=setInterval("timer()",1500);
+            function timer() {
+                count=count-1;
+                if (count <= 0 || preview == true) {
+                    clearInterval(counter);
+                    showClose();
+                    return;
+                }
+                jQuery("#showTimer").text("Please wait " + count + " seconds ...  ");
+            }
+            function showClose() {
+                jQuery("#showTimer").hide();
+                jQuery("#showSkip").show();
+            }
+        </script>
+        <input type="hidden" id="my_key" value="00000671241704543249" />
+        <script type="text/javascript" src="/js/interstitial.js"></script>
+        <script type="text/javascript">
+        var $jQuery = jQuery.noConflict();
+        //$jQuery(window).load(function() {
+            $jQuery('body').interstitial();
+        //} );
+		
+		$jQuery(document).ready(function(){
+			$jQuery('body').height($jQuery(window).height()-68);
+		})
+        </script>
+		
+		
+    </body>
+</html>
