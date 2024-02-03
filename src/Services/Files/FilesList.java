@@ -1,4 +1,4 @@
-package Services.Http.Files;
+package Services.Files;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,9 +26,10 @@ public class FilesList {
             } else {
                 String name = file.getName();
                 Map<String, String> arr = new HashMap<>();
-
-                String version = name.split(".")[0].substring(Math.max(name.split(".")[0].length() - 4, 0));
-                arr.put("version", version);
+//
+//                String version = name.split(".")[0].substring(Math.max(name.split(".")[0].length() - 4, 0));
+                String path = directoryPath + name;
+                arr.put("path", path);
                 arr.put("name", name);
 
                 array.add(arr);

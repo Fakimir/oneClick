@@ -10,10 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import Layouts.Login;
-import Layouts.Main;
-import Layouts.Registration;
-import Layouts.Download;
+import Layouts.*;
 
 
 public class App extends JFrame {
@@ -32,6 +29,7 @@ public class App extends JFrame {
         mainPanel.add(new Registration(), "Registration");
         mainPanel.add(new Download(), "Download");
         mainPanel.add(new Main(), "Main");
+        mainPanel.add(new AvaliableVersions(), "AvaliableVersions");
 
         add(mainPanel);
 

@@ -53,8 +53,8 @@ public class DownloadCore {
                     try {
                     fileOut.close();
                     String rootPath = System.getProperty("user.dir");
-                    RunCommand.run(("cd " + rootPath + "/" + path), password);
-                    RunCommand.run(("sudo java -jar " + name), password);
+//                    RunCommand.run(("cd " + rootPath + "/" + path), password);
+//                    RunCommand.run(("sudo java -jar " + name), password);
                     } catch(IOException e) {
                         e.printStackTrace();
                     }
