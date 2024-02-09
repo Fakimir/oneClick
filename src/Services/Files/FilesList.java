@@ -12,7 +12,8 @@ public class FilesList {
 
     public static List<Map<String, String>> list() {
         String rootPath = System.getProperty("user.dir");
-        String directoryPath = rootPath + "/Downloads";
+        String directoryPath = rootPath + "/src/Downloads/";
+        System.out.println(directoryPath);
         
         File directory = new File(directoryPath);
         

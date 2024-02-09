@@ -31,5 +31,11 @@ public class Main extends JPanel {
                 App.Layout.show(App.mainPanel, "Download");
             }
         });
+        
+        avaliable.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                App.Layout.show(App.mainPanel, "AvaliableVersions");
+            }
+        });
     }
 }

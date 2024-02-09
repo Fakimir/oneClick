@@ -12,7 +12,7 @@ import Start.App;
 
 
 public class Download extends JPanel {
-    private JLabel coreLabel = new JLabel("1.18");
+    private JLabel coreLabel = new JLabel("1.12.2");
     private JButton download = new JButton("Download");
     private JTextArea textArea = new JTextArea();
 
@@ -32,7 +32,7 @@ public class Download extends JPanel {
         
         download.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                App.mainPanel.add(new DownloadVersion("1.18", "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18-38.0.17/forge-1.18-38.0.17-installer.jar"), "DownloadVersion");
+                App.mainPanel.add(new DownloadVersion("1.12.2", "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongevanilla/1.12.2-7.4.7/spongevanilla-1.12.2-7.4.7.jar"), "DownloadVersion");
                 App.Layout.show(App.mainPanel, "DownloadVersion");
             }
         });
