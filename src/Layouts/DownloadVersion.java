@@ -18,12 +18,16 @@ public class DownloadVersion extends JPanel {
     private JPasswordField password = new JPasswordField();
     private JLabel passwordLabel = new JLabel("Пароль user os:");
 
+    private JButton toMainPanel = new JButton("На главную страницу");
+
     public DownloadVersion(String version, String url) {
         final String coreVersion = version;
         final String coreUrl = url;
 
         setSize(800, 600);
         setLayout(null);
+
+        toMainPanel.setBounds(50, 50, 100, 30);
 
         download.setBounds(250, 150, 300, 30);
         title.setBounds(250, 100, 300, 30);
@@ -38,6 +42,7 @@ public class DownloadVersion extends JPanel {
         add(passwordLabel);
         add(password);
         add(download);
+        add(toMainPanel);
 
         download.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
