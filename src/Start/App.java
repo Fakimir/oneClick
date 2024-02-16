@@ -22,7 +22,7 @@ public class App extends JFrame {
 
     private App() {
         super("One Click");
-        setSize(800, 600);
+        setSize(800, 900);
 
         mainPanel.setLayout(Layout);
         mainPanel.add(new Login(), "Login");
@@ -30,6 +30,7 @@ public class App extends JFrame {
         mainPanel.add(new Download(), "Download");
         mainPanel.add(new Main(), "Main");
         mainPanel.add(new AvaliableVersions(), "AvaliableVersions");
+        mainPanel.add(new EditConfigurations(), "Settings");
 
         add(mainPanel);
 

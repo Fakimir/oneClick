@@ -26,13 +26,13 @@ public class Download extends JPanel {
 
     private JTextArea textArea = new JTextArea();
 
-    private JButton toMainPanel = new JButton("На главную страницу");
+    private JButton toMainPanel = new JButton("На главную");
 
     public Download() {
         setSize(800, 900);
         setLayout(null);
 
-        toMainPanel.setBounds(50, 50, 100, 30);
+        toMainPanel.setBounds(50, 50, 160, 30);
 
         coreLabel_1_12_2.setBounds(250, 100, 50, 30);
         download_1_12_2.setBounds(320, 100, 230, 30);

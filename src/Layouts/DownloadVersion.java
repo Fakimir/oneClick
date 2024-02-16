@@ -18,7 +18,7 @@ public class DownloadVersion extends JPanel {
     private JPasswordField password = new JPasswordField();
     private JLabel passwordLabel = new JLabel("Пароль user os:");
 
-    private JButton toMainPanel = new JButton("На главную страницу");
+    private JButton toMainPanel = new JButton("На главную");
 
     public DownloadVersion(String version, String url) {
         final String coreVersion = version;

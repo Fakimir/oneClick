@@ -21,8 +21,8 @@ public class SFTPUploader {
         channel.connect();
         channel.put(localFilePath, remoteFilePath);
         
-        channel.disconnect(); // Закрыть канал перед завершением сессии
-        session.disconnect(); //Закрыть сессию
+        channel.disconnect();
+        session.disconnect();
     
         System.out.println("Файл успешно передан на сервер.");
     }
