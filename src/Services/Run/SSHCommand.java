@@ -9,7 +9,7 @@ import com.jcraft.jsch.*;
 
 public class SSHCommand {
     
-    public static void executeSSHCommand(String host, String user, String password, String command) throws JSchException, SftpException, InterruptedException, IOException {
+    public static int executeSSHCommand(String host, String user, String password, String command) throws JSchException, SftpException, InterruptedException, IOException {
         JSch jsch=new JSch();  
         Session session=jsch.getSession(user, host, 22);
         session.setPassword(password);
@@ -41,7 +41,9 @@ public class SSHCommand {
                 if (in.available() > 0) {
                     continue;
                 }
-                System.out.println("exit-status: " + command + " --->" + channel.getExitStatus());
+                int exitStatus = channel.getExitStatus();
+                System.out.println("exit-status: " + command + " --->" + exitStatus);
+                return exitStatus;
                 break;
             }
             try {

@@ -19,6 +19,8 @@ public class Main extends JPanel {
         setSize(800, 600);
         setLayout(null);
 
+
+
         title.setBounds(240, 50, 320, 60);
         downloads.setBounds(250, 150, 300, 30);
         avaliable.setBounds(250, 200, 300, 30);

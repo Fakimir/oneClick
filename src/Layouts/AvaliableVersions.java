@@ -29,6 +29,8 @@ public class AvaliableVersions extends JPanel {
     
     private JTextField hostName = new JTextField();
     private JLabel hostNameLabel = new JLabel("Имя пользователя сервера");
+
+    private JButton toMainPanel = new JButton("На главную");
     
     public AvaliableVersions() {
         setSize(800, 900);
@@ -54,9 +56,14 @@ public class AvaliableVersions extends JPanel {
 				    String remoteServerDirectory = "/root/server"; 
 				    String remoteServerPath = "/root/server/" + version.get("name");
 				    String combinedCommand = "sudo mkdir " + remoteServerDirectory;
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), combinedCommand);
+
+                    String hostIP = host.getText();
+                    String user = hostName.getText();
+                    String userPassword = password.getText();
+
+				    SSHCommand.executeSSHCommand(hostIP, hostName.getText(), password.getText(), combinedCommand);
 				    
-				    SFTPUploader.uploadFile(host.getText(), hostName.getText(), password.getText(), localFilePath, remoteServerPath);
+				    SFTPUploader.uploadFile(hostIP, hostName.getText(), password.getText(), localFilePath, remoteServerPath);
 
 //                    String removeLockCommand = "sudo kill -9 22510";
 //                    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), removeLockCommand);
@@ -64,13 +71,13 @@ public class AvaliableVersions extends JPanel {
 //                    String killApt = "sudo fuser -vkiy /var/lib/dpkg/lock";
 //                    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), killApt);
 				    String reloadServerCommand = "sudo service minecraft-server restart";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), reloadServerCommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, reloadServerCommand);
 				    
 				    String runJDKCommand = "sudo apt install -y openjdk-8-jdk";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), runJDKCommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, runJDKCommand);
 				    
 				    String runCoreCommand = "java -jar \"$(readlink -f /root/server/" + version.get("name") + ")\"";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), runCoreCommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, runCoreCommand);
 
                     String name = version.get("name");
                     String version = name.split("-")[1].replace("_", ".");
@@ -78,15 +85,15 @@ public class AvaliableVersions extends JPanel {
                     
 				    
 				    String runServerCommand = "java -jar \"$(readlink -f /root/server/" + finalName + ")\"";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), runServerCommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, runServerCommand);
 				    
 				    String editEULACommand = "sudo sed -i 's/eula=false/eula=true/' /root/eula.txt";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), editEULACommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, editEULACommand);
 				    
 				    String editOnlineCommand = "sudo sed -i 's/online-mode=true/online-mode=false/' /root/server.properties";
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), editOnlineCommand);
+				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, editOnlineCommand);
 				    
-				    SSHCommand.executeSSHCommand(host.getText(), hostName.getText(), password.getText(), runServerCommand);
+//				    SSHCommand.executeSSHCommand(hostIP, user, userPassword, runServerCommand);
 				    
 					System.out.println("Succes");
 				} catch (JSchException | SftpException | InterruptedException e1) {
@@ -121,8 +128,10 @@ public class AvaliableVersions extends JPanel {
         hostNameLabel.setBounds(250, 205, 300, 30);
         hostName.setBounds(250, 230, 300, 30);
 
+        toMainPanel.setBounds(50, 50, 160, 30);
 
         add(title);
+        add(toMainPanel);
         add(passwordLabel);
         add(password);
         

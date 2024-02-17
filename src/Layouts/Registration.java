@@ -17,11 +17,15 @@ import Start.App;
 public class Registration extends JPanel{
 
     private JTextField login = new JTextField();
+    private JTextField ip = new JTextField();
+    private JTextField hostName = new JTextField();
     private JPasswordField password = new JPasswordField();
     private JButton signUp = new JButton("Register");
     private JButton signIn = new JButton("Login");
     private JLabel loginLabel = new JLabel("Login:");
     private JLabel passwordLabel = new JLabel("Password:");
+    private JLabel ipLabel = new JLabel("Server ip:");
+    private JLabel hostNameLabel = new JLabel("host name:");
 
     /**
      * 
@@ -31,7 +35,7 @@ public class Registration extends JPanel{
         setLayout(null);
 
         loginLabel.setBounds(150, 100, 100, 30);  
-        login.setBounds(250, 100, 300, 30);       
+        login.setBounds(250, 100, 300, 30);
 
         passwordLabel.setBounds(150, 150, 100, 30); 
         password.setBounds(250, 150, 300, 30);      
@@ -39,12 +43,22 @@ public class Registration extends JPanel{
         signIn.setBounds(250, 200, 150, 30);
         signUp.setBounds(400, 200, 150, 30);
 
+        ipLabel.setBounds(150, 250, 100, 30);
+        ip.setBounds(250, 250, 300, 30);
+
+        hostNameLabel.setBounds(150, 250, 100, 30);
+        hostName.setBounds(250, 250, 300, 30);
+
         add(loginLabel);
         add(login);
         add(passwordLabel);
         add(password);
         add(signIn);
         add(signUp);
+        add(ipLabel);
+        add(ip);
+        add(hostNameLabel);
+        add(hostName);
 
          signUp.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

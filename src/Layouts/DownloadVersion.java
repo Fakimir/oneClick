@@ -27,7 +27,7 @@ public class DownloadVersion extends JPanel {
         setSize(800, 600);
         setLayout(null);
 
-        toMainPanel.setBounds(50, 50, 100, 30);
+        toMainPanel.setBounds(50, 50, 160, 30);
 
         download.setBounds(250, 150, 300, 30);
         title.setBounds(250, 100, 300, 30);
